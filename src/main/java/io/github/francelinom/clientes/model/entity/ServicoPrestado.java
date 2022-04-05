@@ -1,5 +1,6 @@
 package io.github.francelinom.clientes.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.Column;
@@ -10,10 +11,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Data
-public class Servico {
+public class ServicoPrestado {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,4 +30,8 @@ public class Servico {
 
     @Column
     private BigDecimal valor;
+
+    @Column
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate data;
 }
