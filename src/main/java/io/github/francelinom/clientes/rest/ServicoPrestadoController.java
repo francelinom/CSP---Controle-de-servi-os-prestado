@@ -8,6 +8,7 @@ import io.github.francelinom.clientes.rest.dto.ServicoPrestadoDTO;
 import io.github.francelinom.clientes.util.BigDecimalConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +26,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/servicos-prestados")
 @RequiredArgsConstructor
+@CrossOrigin("http://localhost:4200")
 public class ServicoPrestadoController {
     private final ClienteRepository clienteRepository;
     private final ServicoPrestadoRepository servicoPrestadoRepository;
